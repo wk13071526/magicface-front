@@ -1,0 +1,16 @@
+/* pages/login/login.wxss */
+
+
+.text1 {
+  text-align: center;
+  color: black;
+  font-size: 17px;
+  margin-top: 0;
+}
+
+.text2 {
+  text-align: center;
+  color: gray;
+  font-size: 13px;
+  margin-top: 15px;
+}

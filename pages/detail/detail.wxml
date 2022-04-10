@@ -1,0 +1,30 @@
+<!--pages/detail/detail.wxml-->
+<view class="container" style="align-content: flex-start;">
+  <image class="img-view" src="{{resultpath.length > 0 ? resultpath : (imgpath.length > 0 ? imgpath : '../image/default.jpg')}}" mode="aspectFit"></image>
+</view>
+<block wx:if="{{imgpath.length <= 0}}">
+  <button style="background-color: rgb(116, 228, 116);" bindtap="chooseImage">上传图片</button>
+</block>
+<block wx:elif="{{!hasdone && imgpath.length > 0}}">
+  <view class="container">
+    <button style="background-color: rgb(236, 200, 100); width: 40vw;" bindtap="chooseImage">重新上传</button>
+    <button style="background-color: rgb(116, 228, 116); width: 40vw;" bindtap="startCompress" >开始转换</button>
+  </view>
+</block>
+<block wx:else>
+  <view class="container">
+    <button style="background-color: rgb(116, 228, 116); width: 40vw;" bindtap="saveToAlbum">保存到相册</button>
+    <button style="background-color: rgb(236, 200, 100); width: 40vw;" bindtap="sendFile">发送给朋友</button>
+  </view>
+</block>
+<view class="user-info">
+  <text style="font-size: small;">当前虚拟币个数: </text>
+  <text style="font-size: large; color: red;">{{coinNum}}</text>
+  <text style="font-size: small;">，一个虚拟币可转换一次</text>
+  <view style="font-size: small; margin-bottom: 20px;">每周首次分享小程序给好友或群可获取5个虚拟币</view>
+  <view class="container">
+    <button bindtap="gotoPay" style="background-color: limegreen; width: 40vw;">去充值</button>
+    <button style="background-color: rgb(236, 200, 100); width: 40vw;" open-type="share">去分享</button>
+  </view>
+  
+</view>

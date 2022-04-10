@@ -1,0 +1,15 @@
+<!--pages/login/login.wxml-->
+<view class="container">
+  <image src="../image/WeChat.png" style="width: 80px; height: 80px;"></image>
+</view>
+<view class="text1">
+  <text>登录之后更精彩</text>
+</view>
+<view class="text2">
+  <text>授权并同意使用微信账号登录当前小程序</text>
+</view>
+<view style="margin-top: 20px;">
+  <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile" style="background-color: lightgreen;">授权登录</button>
+  <button wx:elif="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" style="background-color: lightgreen;">授权登录</button>
+  <view wx:else> 请使用1.4.4及以上版本基础库 </view>
+</view>
