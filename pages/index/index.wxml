@@ -1,0 +1,12 @@
+<!--index.wxml-->
+<view class="title-view">{{title}}</view>
+<view class="list-view" wx:for="{{dataArray}}" wx:for-index="index" wx:key="index">
+  <view wx:if="{{item.show}}" class="bg-view" bindtap="onClickItem" data-item="{{item}}" data-index="{{index}}" style="background-color: {{item.color}};">
+    <view class="left-view">
+      <image class="img" src="{{item.img}}"> </image>
+    </view>
+    <view class="right-view">
+      <text class="name">{{item.value}}</text>
+    </view>
+  </view>
+</view>

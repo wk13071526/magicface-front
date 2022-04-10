@@ -1,0 +1,23 @@
+<!--pages/recharge/recharge.wxml-->
+<view class="page" style="padding-left: 15px; padding-right: 15px;">
+    <view class="page__hd">
+        <text class="page__title">请选择充值金额</text>
+        <!-- <text class="page__desc">单选框</text> -->
+    </view>
+    <view class="page__bd">
+        <view class="section section_gap">
+            <radio-group class="radio-group" bindchange="radioChange">
+                <radio class="radio" wx:for-items="{{items}}" wx:key="name" value="{{item.value}}" checked="{{item.checked}}">
+                    <text>{{item.name}}</text>
+                </radio>
+            </radio-group>
+        </view>
+    </view>
+</view>
+
+<view style="margin-top: 20px; text-align: center;">
+  <text style="font-size: small;">自定义充值金额</text>
+  <input placeholder="请输入充值金额" value="{{inputText}}" type="number" maxlength="20" bindinput="bindKeyInput"/>
+</view>
+
+<button style="background-color: limegreen; margin-top: 20px;" bindtap="confirm">确认充值</button>
